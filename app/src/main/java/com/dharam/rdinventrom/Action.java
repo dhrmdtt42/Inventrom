@@ -53,9 +53,10 @@ public  class Action extends Fragment{
             @Override
             public void onClick(View v) {
                 camera.takePicture(null, null, pictureCallback);
-                Intent intent = new Intent(getContext(),UserDataa.class);
-//                intent.setData(null);
-                startActivity(intent);
+//                Intent intent = new Intent(getActivity().getApplicationContext(),UserDataa.class);
+////                intent.setData(null);
+//                startActivity(intent);
+
             }
         });
         return rootView;
@@ -88,11 +89,16 @@ public  class Action extends Fragment{
             else
             {
                 Toast.makeText(getContext(), "Casting image", Toast.LENGTH_LONG).show();
+                saveImage(bitmap);
+                capturedImageHolder.setImageBitmap(scaleDownBitmapImage(bitmap, 300, 200));
+
+                Intent intent = new Intent(getContext(),UserDataa.class);
+//                intent.setData(null);
+                startActivity(intent);
             }
             //Casting the bitmap image captured to the imageview
             // Continue only if the File was successfully created
-            saveImage(bitmap);
-            capturedImageHolder.setImageBitmap(scaleDownBitmapImage(bitmap, 300, 200));
+
         }
 
     };
@@ -109,7 +115,7 @@ public  class Action extends Fragment{
     {
         // The image which is captured by the camera is saved in the given file
         // directory name.
-        File myDir = new File( Environment.getExternalStorageDirectory(),File.separator+"Inventrom");
+        File myDir = new File( Environment.getExternalStorageDirectory(),"/RD Inventrom");
         // Log.v  will used for show our captured image directory
         Log.v("File path",": "+myDir);
         myDir.mkdirs();

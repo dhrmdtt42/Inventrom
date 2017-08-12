@@ -1,5 +1,6 @@
 package com.dharam.rdinventrom;
 
+
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
@@ -23,25 +24,26 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 public class UserDataa extends Activity {
-    private EditText name;
-    private EditText age;
-    private EditText add;
-    private EditText gen;
-    private TextView textView;
-    private Button saveButton;
-    private Button readButton;
+      private EditText name;
+      private EditText age;
+      private EditText add;
+      private EditText gen;
+      private TextView textView;
+      private Button saveButton;
+      private Button readButton;
 
 
 
-    private static final int REQUEST_ID_READ_PERMISSION = 100;
-    private static final int REQUEST_ID_WRITE_PERMISSION = 200;
+      private static final int REQUEST_ID_READ_PERMISSION = 100;
+      private static final int REQUEST_ID_WRITE_PERMISSION = 200;
 
-    private final String fileName = "note.txt";
+      private final String fileName = "note.txt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userdataa);
+
 
         name = (EditText) findViewById(R.id.name);
         age = (EditText) findViewById(R.id.age);
